@@ -4,12 +4,54 @@ html, body, h1, h2, h3, ol, ul, li, a {
       margin: 0;
 }
 
-.button-div {
-  display: vertical;
-  width: 80px;
-  /*border: 1px solid red;*/
-  height: 100px;
-  position: fixed;
-  top: 60px;
-  margin: 300px 15px 15px 15px;
+.container {
+  text-shadow: 1px 1px 1px grey;
+}
+
+.jumbotron {
+  text-align: center;
+}
+.kappa-carousel {
+  /*border: 1px solid brown;*/
+  font-weight: bolder;
+  margin: auto;
+  width: 75%;
+  text-align: center;
+}
+
+.carnival {
+  border: 1px solid blue;
+  font-weight: bold;
+  margin: auto;
+  width: 80%;
+}
+
+.index {
+  border: 1px solid purple;
+  margin: auto;
+  width: 100%;
+}
+
+.button-container {
+  border: 1px solid red;
+  margin:auto;
+  width: 100%;
+  top: 515px;
+  position: absolute;
+}
+
+.center-children {
+  text-align: center;
+}
+
+.previous {
+  /*border: 1px solid yellow;*/
+  margin: auto;
+  width: 100px;
+}
+
+.next {
+  /*border: 1px solid green;*/
+  margin: auto;
+  width: 100px;
 }

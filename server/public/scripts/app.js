@@ -11,11 +11,11 @@ $(document).ready(function(){
     }
   });
 
-  $('.button-div').append('<button type="button" class="previous btn">Previous</button>');
-  $('.button-div').append('<button type="button" class="next btn">Next</button>');
+  $('.button-container').append('<button type="button" class="previous btn btn-success">Previous</button>');
+  $('.button-container').append('<button type="button" class="next btn btn-success">Next</button>');
 
-  $('.button-div').on('click', '.next', onNext);
-  $('.button-div').on('click', '.previous', onPrevious);
+  $('.button-container').on('click', '.previous', onPrevious);
+  $('.button-container').on('click', '.next', onNext);
 
 });
 
