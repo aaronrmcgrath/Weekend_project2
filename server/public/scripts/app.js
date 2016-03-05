@@ -32,6 +32,15 @@ var $el = undefined;
 
 //Appends the Dom and creates the previous and next buttons
 function appendDom(data) {
+
+  if (index > data.kappa.length - 1) {
+    index = 0;
+    return index;
+  } else if (index < 0) {
+    index = data.kappa.length;
+    return index;
+  }
+
   $('.carnival').append('<div class="carousel"></div>');
 
   var $el = $('.carnival').children().last();
@@ -50,9 +59,9 @@ function appendDom(data) {
 function onNext() {
   index++;
   // var person = data.kappa;
-  if (index > data.kappa.length - 1) {
-    index = 0;
-  }
+  // if (index > data.kappa.length - 1) {
+  //   index = 0;
+  // }
   $.ajax({
     type: "GET",
     url: "/data",
@@ -72,9 +81,9 @@ function onNext() {
 function onPrevious() {
   index--;
   // var person = data.kappa;
-  if (index < 0) {
-    index = data.kappa.length - 1;
-  }
+  // if (index < 0) {
+  //   index = data.kappa.length - 1;
+  // }
   $.ajax({
     type: "GET",
     url: "/data",
