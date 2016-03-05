@@ -33,13 +33,17 @@ var $el = undefined;
 //Appends the Dom and creates the previous and next buttons
 function appendDom(data) {
 
+  console.log('*** --->> index before if/else: ', index);
+
   if (index > data.kappa.length - 1) {
     index = 0;
-    return index;
+    // return index;
   } else if (index < 0) {
-    index = data.kappa.length;
-    return index;
+    index = data.kappa.length - 1;
+    // return index;
   }
+
+  console.log('*** --->> index after if/else: ', index);
 
   $('.carnival').append('<div class="carousel"></div>');
 
@@ -70,7 +74,7 @@ function onNext() {
       $('.carnival').empty();
       appendDom(data);
       // console.log(index);
-      return index;
+      // return index;
     }
   });
   console.log(index);
@@ -92,7 +96,7 @@ function onPrevious() {
       $('.carnival').empty();
       appendDom(data);
       // console.log(index);
-      return index;
+      // return index;
     }
   });
   console.log(index);
