@@ -11,8 +11,12 @@ $(document).ready(function(){
     }
   });
 
-  $('.carousel').on('click', '.next', onNext);
-  $('.carousel').on('click', '.previous', onPrevious);
+  $('.button-div').append('<button type="button" class="previous btn">Previous</button>');
+  $('.button-div').append('<button type="button" class="next btn">Next</button>');
+
+  $('.button-div').on('click', '.next', onNext);
+  $('.button-div').on('click', '.previous', onPrevious);
+
 });
 
 
@@ -39,8 +43,6 @@ function appendDom(data) {
   $el.append('<p>' + data.kappa[index].spirit_animal + '</p>');
   $el.append('<p>' + data.kappa[index].shoutout + '</p>');
 
-  $el.append('<button type="button" class="previous btn">Previous</button>');
-  $el.append('<button type="button" class="next btn">Next</button>');
 }
 
 
