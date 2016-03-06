@@ -56,6 +56,10 @@ function appendDom(data) {
   $el.append('<p>' + data.kappa[index].spirit_animal + '</p>');
   $el.append('<p>' + data.kappa[index].shoutout + '</p>');
 
+  for (var j = 0; j <= data.kappa.length; j++) {
+    $('.index').append('<p class="container legend legend-box[j]">' + j + '</p>');
+  }
+  console.log(j, index);
 }
 
 
@@ -72,6 +76,7 @@ function onNext() {
     success: function(data){
       console.log('onNext data: ', data);
       $('.carnival').empty();
+      $('.index').empty();
       appendDom(data);
       // console.log(index);
       // return index;
@@ -94,6 +99,7 @@ function onPrevious() {
     success: function(data){
       console.log('onPrevious data: ', data);
       $('.carnival').empty();
+      $('.index').empty();
       appendDom(data);
       // console.log(index);
       // return index;
@@ -103,9 +109,14 @@ function onPrevious() {
 }
 
 
-
-
-
+//Counter Legend function
+// function legendIndex() {
+//   $('.index').empty();
+//   for (var j = 0; j <= data.kappa.length; j++) {
+//     $('.index').append('<p class="container legend legend-box[j]"></p>');
+//   }
+//   console.log(j, index);
+// }
 
 
 

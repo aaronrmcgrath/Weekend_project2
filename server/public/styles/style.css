@@ -20,23 +20,23 @@ html, body, h1, h2, h3, ol, ul, li, a {
 }
 
 .carnival {
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
   font-weight: bold;
   margin: auto;
   width: 80%;
 }
 
 .index {
-  border: 1px solid purple;
+  /*border: 1px solid purple;*/
   margin: auto;
   width: 100%;
 }
 
 .button-container {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   margin:auto;
   width: 100%;
-  top: 515px;
+  top: 625px;
   position: absolute;
 }
 
@@ -54,4 +54,18 @@ html, body, h1, h2, h3, ol, ul, li, a {
   /*border: 1px solid green;*/
   margin: auto;
   width: 100px;
+}
+
+.index {
+  margin: 5px 75px 15px 75px;
+  width: 100%;
+}
+
+.legend {
+  border: 2px solid white;
+  border-radius: 5px;
+  background: grey;
+  display: inline-block;
+  height: 35px;
+  width: 40px;
 }
