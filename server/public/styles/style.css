@@ -57,15 +57,22 @@ html, body, h1, h2, h3, ol, ul, li, a {
 }
 
 .index {
-  margin: 5px 75px 15px 75px;
-  width: 100%;
+  /*margin: 5px 75px 15px 100px;*/
+  margin: auto;
+  width: 110%;
+  padding: 0 150px 0 150px;
 }
 
 .legend {
-  border: 2px solid white;
-  border-radius: 5px;
-  background: grey;
+  margin: 2px;
+  border-radius: 30px;
+  background-color: grey;
   display: inline-block;
-  height: 35px;
-  width: 40px;
+  height: 30px;
+  width: 1px;
+}
+
+.highlight {
+  background-color: #6aaeed;
+  box-shadow: 1px 1px 3px black;
 }

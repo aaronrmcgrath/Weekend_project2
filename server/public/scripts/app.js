@@ -24,6 +24,7 @@ $(document).ready(function(){
 
 var index = 0;
 var $el = undefined;
+var legendNum = 0;
 // var person = undefined;
 
 
@@ -33,7 +34,7 @@ var $el = undefined;
 //Appends the Dom and creates the previous and next buttons
 function appendDom(data) {
 
-  console.log('*** --->> index before if/else: ', index);
+  // console.log('*** --->> index before if/else: ', index);
 
   if (index > data.kappa.length - 1) {
     index = 0;
@@ -43,7 +44,7 @@ function appendDom(data) {
     // return index;
   }
 
-  console.log('*** --->> index after if/else: ', index);
+  // console.log('*** --->> index after if/else: ', index);
 
   $('.carnival').append('<div class="carousel"></div>');
 
@@ -56,10 +57,19 @@ function appendDom(data) {
   $el.append('<p>' + data.kappa[index].spirit_animal + '</p>');
   $el.append('<p>' + data.kappa[index].shoutout + '</p>');
 
-  for (var j = 0; j <= data.kappa.length; j++) {
-    $('.index').append('<p class="container legend legend-box[j]">' + j + '</p>');
+  for (var legendNum = 0; legendNum < data.kappa.length; legendNum++) {
+
+    var legendClass = '.legend-' + legendNum;
+
+    $('.index').append('<p class="container legend legend-' + legendNum + '"></p>');
+
+    if (index == legendNum) {
+      $('.legend-' + legendNum + '').addClass('highlight');
+    }
+
   }
-  console.log(j, index);
+
+  console.log(index, legendNum);
 }
 
 
@@ -82,7 +92,7 @@ function onNext() {
       // return index;
     }
   });
-  console.log(index);
+  // console.log(index);
 }
 
 
@@ -105,7 +115,7 @@ function onPrevious() {
       // return index;
     }
   });
-  console.log(index);
+  // console.log(index);
 }
 
 
@@ -125,7 +135,11 @@ function onPrevious() {
 
 
 
-
+// var legendClass = '.legend-' + legendNum;
+//
+// if (index == legendNum) {
+//         $('.legend-' + legendNum + '').addClass('highlight');
+// }
 
 
 
