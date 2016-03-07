@@ -7,6 +7,7 @@ $(document).ready(function(){
     url: "/data",
     success: function(data){
       console.log(data);
+      kappaRiders = data.kappa;
       appendDom(data);
     }
   });
@@ -30,7 +31,7 @@ var index = 0;
 var $el = undefined;
 var legendNum = 0;
 var timer = 0;
-// var person = undefined;
+var kappaRiders = [];
 
 
 
@@ -43,11 +44,11 @@ function appendDom(data) {
 
   // console.log('*** --->> index before if/else: ', index);
 
-  if (index > data.kappa.length - 1) {
+  if (index > kappaRiders.length - 1) {
     index = 0;
     // return index;
   } else if (index < 0) {
-    index = data.kappa.length - 1;
+    index = kappaRiders.length - 1;
     // return index;
   }
 
@@ -59,24 +60,24 @@ function appendDom(data) {
   // person = data.kappa;
 
   $el.append('<br />');
-  $el.append('<p>' + data.kappa[index].name + '</p>').hide().fadeIn('slow');
-  $el.append('<p>' + data.kappa[index].location + '</p>').hide().fadeIn('slow');
-  $el.append('<p>' + data.kappa[index].spirit_animal + '</p>').hide().fadeIn('slow');
-  $el.append('<p>' + data.kappa[index].shoutout + '</p>').hide().fadeIn('slow');
+  $el.append('<p>' + kappaRiders[index].name + '</p>').hide().fadeIn('slow');
+  $el.append('<p>' + kappaRiders[index].location + '</p>').hide().fadeIn('slow');
+  $el.append('<p>' + kappaRiders[index].spirit_animal + '</p>').hide().fadeIn('slow');
+  $el.append('<p>' + kappaRiders[index].shoutout + '</p>').hide().fadeIn('slow');
 
-  for (var legendNum = 0; legendNum < data.kappa.length; legendNum++) {
+  for (var i = 0; i < kappaRiders.length; i++) {
 
-    var legendClass = '.legend-' + legendNum;
+    var legendClass = '.legend-' + i;
 
-    $('.index').append('<p class="container legend legend-' + legendNum + '"></p>');
+    $('.index').append('<p class="container legend legend-' + i + '"></p>');
 
-    if (index == legendNum) {
-      $('.legend-' + legendNum + '').addClass('highlight');
+    if (index == i) {
+      $('.legend-' + i + '').addClass('highlight');
     }
 
   }
 
-  console.log(index, legendNum);
+  console.log(index, i);
 }
 
 
