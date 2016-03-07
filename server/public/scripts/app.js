@@ -85,23 +85,27 @@ function appendDom(data) {
 function onNext() {
   index++;
   clearInterval(timer);
+  $('.carousel').empty();
+  $('.index').empty();
+  appendDom(kappaRiders);
+
   // var person = data.kappa;
   // if (index > data.kappa.length - 1) {
   //   index = 0;
   // }
-  $.ajax({
-    type: "GET",
-    url: "/data",
-    success: function(data){
-      console.log('onNext data: ', data);
-      // $('.carousel').fadeOut('fast', function() {$(this).empty();});
-      $('.carousel').empty();
-      $('.index').empty();
-      appendDom(data);
+  // $.ajax({
+  //   type: "GET",
+  //   url: "/data",
+  //   success: function(data){
+  //     console.log('onNext data: ', data);
+  //     // $('.carousel').fadeOut('fast', function() {$(this).empty();});
+  //     $('.carousel').empty();
+  //     $('.index').empty();
+      // appendDom(data);
       // console.log(index);
       // return index;
-    }
-  });
+  //   }
+  // });
   // console.log(index);
 }
 
@@ -110,22 +114,26 @@ function onNext() {
 function onPrevious() {
   index--;
   clearInterval(timer);
+  $('.carousel').empty();
+  $('.index').empty();
+  appendDom(kappaRiders);
+
   // var person = data.kappa;
   // if (index < 0) {
   //   index = data.kappa.length - 1;
   // }
-  $.ajax({
-    type: "GET",
-    url: "/data",
-    success: function(data){
-      console.log('onPrevious data: ', data);
-      $('.carousel').empty();
-      $('.index').empty();
-      appendDom(data);
+  // $.ajax({
+  //   type: "GET",
+  //   url: "/data",
+  //   success: function(data){
+  //     console.log('onPrevious data: ', data);
+  //     $('.carousel').empty();
+  //     $('.index').empty();
+      // appendDom(data);
       // console.log(index);
       // return index;
-    }
-  });
+  //   }
+  // });
   // console.log(index);
 }
 
@@ -134,7 +142,7 @@ function onPrevious() {
 
 
 
-//END ------>>> trialed functions below v
+//END ------>>> trialed & failed functions below v
 
 
 
