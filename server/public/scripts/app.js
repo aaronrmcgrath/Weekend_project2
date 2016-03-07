@@ -17,6 +17,10 @@ $(document).ready(function(){
   $('.button-container').on('click', '.previous', onPrevious);
   $('.button-container').on('click', '.next', onNext);
 
+  // $('.button-container').on('click', function() {
+  //   $('.carousel').fadeIn('slow', 'swing');
+  // });
+
 });
 
 
@@ -25,6 +29,7 @@ $(document).ready(function(){
 var index = 0;
 var $el = undefined;
 var legendNum = 0;
+var timer = 0;
 // var person = undefined;
 
 
@@ -33,6 +38,8 @@ var legendNum = 0;
 
 //Appends the Dom and creates the previous and next buttons
 function appendDom(data) {
+
+  timer = setInterval(onNext, 10000);
 
   // console.log('*** --->> index before if/else: ', index);
 
@@ -52,10 +59,10 @@ function appendDom(data) {
   // person = data.kappa;
 
   $el.append('<br />');
-  $el.append('<p>' + data.kappa[index].name + '</p>');
-  $el.append('<p>' + data.kappa[index].location + '</p>');
-  $el.append('<p>' + data.kappa[index].spirit_animal + '</p>');
-  $el.append('<p>' + data.kappa[index].shoutout + '</p>');
+  $el.append('<p>' + data.kappa[index].name + '</p>').hide().fadeIn('slow');
+  $el.append('<p>' + data.kappa[index].location + '</p>').hide().fadeIn('slow');
+  $el.append('<p>' + data.kappa[index].spirit_animal + '</p>').hide().fadeIn('slow');
+  $el.append('<p>' + data.kappa[index].shoutout + '</p>').hide().fadeIn('slow');
 
   for (var legendNum = 0; legendNum < data.kappa.length; legendNum++) {
 
@@ -76,6 +83,7 @@ function appendDom(data) {
 //Controls the 'Next' button
 function onNext() {
   index++;
+  clearInterval(timer);
   // var person = data.kappa;
   // if (index > data.kappa.length - 1) {
   //   index = 0;
@@ -85,7 +93,8 @@ function onNext() {
     url: "/data",
     success: function(data){
       console.log('onNext data: ', data);
-      $('.carnival').empty();
+      // $('.carousel').fadeOut('fast', function() {$(this).empty();});
+      $('.carousel').empty();
       $('.index').empty();
       appendDom(data);
       // console.log(index);
@@ -99,6 +108,7 @@ function onNext() {
 //Controls the 'Previous' button
 function onPrevious() {
   index--;
+  clearInterval(timer);
   // var person = data.kappa;
   // if (index < 0) {
   //   index = data.kappa.length - 1;
@@ -108,7 +118,7 @@ function onPrevious() {
     url: "/data",
     success: function(data){
       console.log('onPrevious data: ', data);
-      $('.carnival').empty();
+      $('.carousel').empty();
       $('.index').empty();
       appendDom(data);
       // console.log(index);
@@ -119,14 +129,7 @@ function onPrevious() {
 }
 
 
-//Counter Legend function
-// function legendIndex() {
-//   $('.index').empty();
-//   for (var j = 0; j <= data.kappa.length; j++) {
-//     $('.index').append('<p class="container legend legend-box[j]"></p>');
-//   }
-//   console.log(j, index);
-// }
+
 
 
 
@@ -140,6 +143,18 @@ function onPrevious() {
 // if (index == legendNum) {
 //         $('.legend-' + legendNum + '').addClass('highlight');
 // }
+
+
+
+//Counter Legend function
+// function legendIndex() {
+//   $('.index').empty();
+//   for (var j = 0; j <= data.kappa.length; j++) {
+//     $('.index').append('<p class="container legend legend-box[j]"></p>');
+//   }
+//   console.log(j, index);
+// }
+
 
 
 

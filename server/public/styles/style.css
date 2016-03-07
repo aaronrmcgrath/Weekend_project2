@@ -57,10 +57,13 @@ html, body, h1, h2, h3, ol, ul, li, a {
 }
 
 .index {
+  /*border: 1px solid black;*/
   /*margin: 5px 75px 15px 100px;*/
   margin: auto;
   width: 110%;
   padding: 0 150px 0 150px;
+  position: absolute;
+  top: 500px;
 }
 
 .legend {
